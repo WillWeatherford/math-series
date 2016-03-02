@@ -1,3 +1,6 @@
+"""This module runs tests in pytest to check the funtions."""
+
+
 import pytest
 
 FIB_TABLE = [
@@ -23,6 +26,13 @@ LUCAS_TABLE = [
 ]
 
 
+SUM_TABLE = [
+    (0, 0, 1, 0),
+    (0, 2, 1, 2),
+    (1, 2, 1, 1),
+    (11, 0, 1, 89)
+]
+
 
 @pytest.mark.parametrize('n, result', FIB_TABLE)
 def test_fibonacci_iter(n, result):
@@ -46,3 +56,9 @@ def test_fibonacci_recur(n, result):
 def test_lucas_recur(n, result):
     from series import lucas_recur
     assert lucas_recur(n) == result
+
+
+@pytest.mark.parametrize('n, x, y, result', SUM_TABLE)
+def test_sum_series(n, x, y, result):
+    from series import sum_series
+    assert sum_series(n, x, y) == result
