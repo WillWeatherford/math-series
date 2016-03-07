@@ -30,35 +30,41 @@ SUM_TABLE = [
     (0, 0, 1, 0),
     (0, 2, 1, 2),
     (1, 2, 1, 1),
-    (11, 0, 1, 89)
+    (5, 2, 1, 11),
+    (11, 0, 1, 89),
 ]
 
 
 @pytest.mark.parametrize('n, result', FIB_TABLE)
 def test_fibonacci_iter(n, result):
+    """Test for fibonacci_iter."""
     from series import fibonacci_iter
     assert fibonacci_iter(n) == result
 
 
 @pytest.mark.parametrize('n, result', LUCAS_TABLE)
 def test_lucas_iter(n, result):
+    """Test for lucas_iter."""
     from series import lucas_iter
     assert lucas_iter(n) == result
 
 
 @pytest.mark.parametrize('n, result', FIB_TABLE)
 def test_fibonacci_recur(n, result):
+    """Test for fibonacci_recur."""
     from series import fibonacci_recur
     assert fibonacci_recur(n) == result
 
 
 @pytest.mark.parametrize('n, result', LUCAS_TABLE)
 def test_lucas_recur(n, result):
+    """Test for lucas_recur."""
     from series import lucas_recur
     assert lucas_recur(n) == result
 
 
 @pytest.mark.parametrize('n, x, y, result', SUM_TABLE)
 def test_sum_series(n, x, y, result):
+    """Test for sum_series."""
     from series import sum_series
     assert sum_series(n, x, y) == result
