@@ -8,7 +8,7 @@ fibonacci_iter(n):
 
 lucas_iter(n)
     Return the nth value in the lucas series by iteration.
-    
+
     >>>lucas_iter(2)
     3
 
@@ -20,9 +20,12 @@ fibonacci_recur(n):
 
 lucas_recur(n)
     Return the nth value in the lucas series by recursion.
-    
+
     >>>lucas_recur(2)
     3
+
+sum_series(n)
+    Return the nth value of either series by recursion.
 """
 
 
@@ -74,7 +77,7 @@ def sum_series(n, x=0, y=1):
         return x
     elif n == 1:
         return y
-    return sum_series(n - 1) + sum_series(n - 2)
+    return sum_series(n - 1, x, y) + sum_series(n - 2, x, y)
 
 
 if __name__ == '__main__':
